@@ -1,6 +1,0 @@
-{
-    "mongodbUri": "mongodb+srv://bob:BGoClrIfK9kqSqYN@timcluster.pbr8mmy.mongodb.net/?retryWrites=true&w=majority",
-    "dbName": "LeagueChampV1",
-    "collectionName": "light-champions",
-    "port": 3000
-}

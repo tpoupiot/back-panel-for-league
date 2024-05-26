@@ -1,36 +1,27 @@
-const express = require("express");
-const app = express();
-const config = require('config');
+const express = require('express');
 const mongoose = require('mongoose');
-const championsRoutes = require('./routes/champions');
+const config = require('./config.js');
+const championRoutes = require('./routes/champions.js');
 
-async function run() {
-    try {
-        await mongoose.connect(config.get('mongodbUri'), {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        });
-        console.log("Connected to MongoDB!");
+const app = express();
+const port = config.port;
 
-        app.use(express.json());
-        app.use(express.urlencoded({ extended: true }));
+mongoose.connect(config.mongodbUri)
+    .then(() => console.log('Connected to MongoDB!'))
+    .catch(err => console.error('Error connecting to MongoDB:', err));
 
-        app.use(function(req, res, next) {
-            res.header("Access-Control-Allow-Origin", "*");
-            res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-            next();
-        });
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-        app.use('/champions', championsRoutes);
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
 
-        app.listen(config.get('port'), () => {
-            console.log(`Server is running on port ${config.get('port')} on http://localhost:${config.get('port')}/`);
-        });
-    } catch (e) {
-        console.error(e);
-        process.exit(1);
-    }
-}
+app.use('/champions', championRoutes);
 
-run().catch(console.dir);
+app.listen(port, () => {
+    console.log(`Server is running on port ${port} on http://localhost:${port}/`);
+});

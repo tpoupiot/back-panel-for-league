@@ -16,7 +16,6 @@ const ChampionSchema = new mongoose.Schema({
     }
 });
 
-// Définir le modèle avec la collection spécifique
 const Champion = mongoose.model('Champion', ChampionSchema, config.collectionName);
 
 module.exports = Champion;

@@ -1,0 +1,32 @@
+.page-width:has(form) {
+  max-width: 500px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+form label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+form input, form select {
+  padding: 10px;
+}
+form input {
+  border: none;
+  border-radius: 8px;
+  background-color: #3C424E;
+  color: #F0E6D2;
+  font-family: "Spiegel", sans-serif;
+  font-size: 16px;
+}
+form .btn {
+  align-self: flex-end;
+  border: none;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=add.css.map */

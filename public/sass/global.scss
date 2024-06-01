@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'Beaufort';
+    src: url('../assets/font/Beaufort.otf') format('opentype');
+    font-weight: normal; /* Poids normal */
+}
+
+@font-face {
+    font-family: 'Beaufort';
+    src: url('../assets/font/BeaufortforLOL-Heavy.otf') format('opentype');
+    font-weight: bold; /* Poids normal */
+}
+
+@font-face {
+    font-family: 'Spiegel';
+    src: url('../assets/font/Spiegel_TT.ttf') format('truetype');
+    font-weight: normal; /* Poids normal */
+}
+
+@font-face {
+    font-family: 'Spiegel';
+    src: url('../assets/font/Spiegel_TT_Bold.ttf') format('truetype');
+    font-weight: bold; /* Poids normal */
+}
+
+
+
+
+body {
+    background-color: #1D212B;
+    font-family: 'Spiegel', sans-serif;
+    color: #F0E6D2;
+    margin: 0;
+    width: 100%;
+}
+
+
+
+h1, h2, h3 {
+    font-family: 'Beaufort', sans-serif;
+    color: #F0E6D2;
+    text-transform: uppercase;
+}
+
+
+h2 {
+    color: #C89B3C;
+}
+
+
+.btn {
+    color: #C89B3C;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Spiegel', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(.975);
+    }
+}
+
+.btn-primary {
+    background-color: #C89B3C;
+    color: #091428;
+}
+
+.btn-secondary {
+    background-color: #0397AB;
+    transition: all 0.2s;
+    color: #1D212B;
+
+    &:hover {
+        background-color: #027d8d;
+    }
+}
+
+.btn--danger {
+    background-color: #E5484D;
+
+    &:hover {
+        background-color: #C63C41;
+    }
+}
+
+.btn--cancel {
+    background-color: #A09B8C;
+
+    &:hover {
+        background-color: #8E8A7A;
+    }
+}
+
+
+.link {
+    text-decoration: underline;
+    color: #fff;
+    transition: all 0.05s;
+    display: flex;
+    padding: 8px;
+    border-radius: 50%;
+
+    &:hover {
+        color: #0397AB;
+        transform: scale(.975);
+    }
+}
+
+.page-width {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    text-align: center;
+    padding: 50px 0;
+
+    h1 {
+        font-size: 3.5em;
+        margin: 0;
+    }
+    h2 {
+        font-size: 1.25em;
+        margin: 0;
+    }
+}

@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Ajouter un Champion</title>
+    <title>Modifier un Champion</title>
     <link rel="stylesheet" href="sass/global.css">
     <link rel="stylesheet" href="sass/add.css">
 </head>
 <body>
 <header>
     <div class="page-width">
-        <h1>Ajouter un Champion</h1>
+        <h1>Modifier un Champion</h1>
     </div>
 </header>
 <main>
     <div class="page-width">
-        <form id="add-champion-form">
-            <label for="name">Nom</label>
+        <form id="edit-champion-form">
+            <input type="text" id="id" required>
+            <label for="name">Nom :</label>
             <input type="text" id="name" name="name" required><br>
-            <label for="title">Titre</label>
+            <label for="title">Titre :</label>
             <input type="text" id="title" name="title" required><br>
-            <label for="portrait">URL du Portrait</label>
+            <label for="portrait">URL du Portrait :</label>
             <input type="url" id="portrait" name="portrait" required><br>
-            <button type="submit" class="btn btn-secondary">Ajouter</button>
+            <button type="submit" class="btn btn-secondary">Modifier</button>
         </form>
     </div>
 </main>
-<script src="js/add.js"></script>
+<script src="js/edit.js"></script>
 </body>
 </html>
